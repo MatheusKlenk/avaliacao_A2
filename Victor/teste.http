@@ -1,0 +1,38 @@
+### FUNCIONALIDADE 1: Cadastrar um novo consumo
+POST http://localhost:5099/api/consumo/cadastrar
+Content-Type: application/json
+
+{
+  "cpf": "123.456.789-00",
+  "mes": 10,
+  "ano": 2025,
+  "m3Consumidos": 37.5,
+  "bandeira": "Vermelha",
+  "possuiEsgoto": true
+}
+
+### Cadastrar outro consumo (bandeira Amarela e sem esgoto)
+POST http://localhost:5099/api/consumo/cadastrar
+Content-Type: application/json
+
+{
+  "cpf": "987.654.321-11",
+  "mes": 10,
+  "ano": 2025,
+  "m3Consumidos": 15,
+  "bandeira": "Amarela",
+  "possuiEsgoto": false
+}
+
+
+### FUNCIONALIDADE 2: Listar todos os consumos
+GET http://localhost:5099/api/consumo/listar
+
+### FUNCIONALIDADE 3: Buscar consumo por CPF, mês e ano
+GET http://localhost:5099/api/consumo/buscar/123.456.789-00/10/2025
+
+### FUNCIONALIDADE 5: Calcular o total geral de todas as faturas
+GET http://localhost:5099/api/consumo/total-geral
+
+### FUNCIONALIDADE 4: Remover um consumo
+DELETE http://localhost:5099/api/consumo/remover/987.654.321-11/10/2025
